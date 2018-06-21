@@ -22,5 +22,19 @@ public class Ocorrencia {
 		this.prioridade = prioridade;
 	}
 
+	long chave() { return chave; }
+	
+	Funcionario responsavel() { return responsavel; }
+	
 	boolean aberta() { return aberta; }
+	
+	void completar() { aberta = false; }
+	
+	Prioridade prioridade() { return prioridade; }
+	void prioridade(Prioridade p) throws Exception {
+		if (this.aberta)
+			prioridade = p;
+		else
+			throw new Exception();
+	}
 }
